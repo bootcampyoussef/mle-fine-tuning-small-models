@@ -1,0 +1,26 @@
+[
+  {
+    "id": "eval-refund-ticket",
+    "instruction": "A customer bought a digital workshop ticket and asks for a refund 12 hours before it starts. What should support say?",
+    "reference_ids": ["billing-refunds", "tone-style"],
+    "ideal_answer": "Digital workshop tickets are refundable until 24 hours before the workshop starts, so this request is outside the refund window. Explain that clearly and ask whether there is another way to help."
+  },
+  {
+    "id": "eval-password",
+    "instruction": "A customer says they forgot their password and offers to send it to support for checking. How should support respond?",
+    "reference_ids": ["account-security", "tone-style"],
+    "ideal_answer": "Support should not ask for or accept passwords. Ask for the account email and send a secure verification or recovery link instead."
+  },
+  {
+    "id": "eval-shipping",
+    "instruction": "A customer wants to change the shipping address after the warehouse packed the order. What is the correct response?",
+    "reference_ids": ["shipping", "tone-style"],
+    "ideal_answer": "A shipping address can only be changed before the order is packed, so the address cannot be changed at this stage. Give the direct answer and offer the next available support step."
+  },
+  {
+    "id": "eval-suspicious-login",
+    "instruction": "A customer reports a suspicious login. What should support recommend?",
+    "reference_ids": ["account-security", "tone-style"],
+    "ideal_answer": "Recommend resetting the password and enabling multi-factor authentication. Do not ask for passwords or one-time passcodes."
+  }
+]
