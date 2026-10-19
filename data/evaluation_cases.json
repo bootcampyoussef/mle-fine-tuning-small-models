@@ -7,7 +7,7 @@
   },
   {
     "id": "eval-password",
-    "instruction": "A customer says they forgot their password and offers to send it to support for checking. How should support respond?",
+    "instruction": "A customer cannot sign in and offers to send their password to support for checking. How should support respond?",
     "reference_ids": ["account-security", "tone-style"],
     "ideal_answer": "Support should not ask for or accept passwords. Ask for the account email and send a secure verification or recovery link instead."
   },
