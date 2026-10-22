@@ -14,14 +14,6 @@ By the end of this repository, you should be able to:
 
 ## Learning Path
 
-```mermaid
-flowchart LR
-    A["01 - Instruction data"] --> B["02 - LoRA and QLoRA"]
-    B --> C["03 - Local fine-tuning"]
-    C --> D["04 - Base vs adapted evaluation"]
-    D --> E["05 - Judge and faithfulness"]
-```
-
 | File / Folder | Description |
 |---|---|
 | [**01 - Instruction Dataset Readiness**](01-instruction-dataset-readiness.ipynb) | Validate examples and evidence links, check train/evaluation separation, and compare completion and chat formats. |
@@ -34,18 +26,11 @@ flowchart LR
 
 | File / Folder | Description |
 |---|---|
-| [**assets**](assets/) | Sourced visual aids referenced in the notebooks. |
+| [**assets**](assets/) | Visual aids referenced in the notebooks. |
 | [**data**](data/) | Training examples, held-out cases, and approved policy references. |
 | [**.env.example**](.env.example) | Optional judge provider configuration template. |
 | [**pyproject.toml**](pyproject.toml) | Project configuration and dependencies. |
 | [**uv.lock**](uv.lock) | Dependency lock file. |
-
-## Mermaid Diagrams
-
-This repository contains Mermaid diagrams. If you want them to render in VS Code, we recommend installing the `Markdown Preview Mermaid Support` extension:
-
-- [Install in VS Code](vscode:extension/bierner.markdown-mermaid)
-- [View on Marketplace](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
 
 ## Setup
 
@@ -95,7 +80,7 @@ The copied SSH URL will look like `git@github.com:<your-username>/<repo-name>.gi
 
 ### 4. Move into the Project Folder and Install Dependencies
 
-This project uses Python 3.13. The command below installs all dependencies and creates a virtual environment in `.venv/`.
+The command below installs all dependencies and creates a virtual environment in `.venv/`.
 
 ```bash
 cd <repo-name>
@@ -114,7 +99,12 @@ For live judging in notebook 05, copy the example file and fill in your API key:
 cp .env.example .env
 ```
 
-For live judging in notebook 05, set `GROQ_API_KEY` ([Groq keys](https://console.groq.com/keys)) or `MISTRAL_API_KEY` ([Mistral key setup](https://docs.mistral.ai/admin/security-access/api-keys)). `LLM_PROVIDER` selects which provider to try first; a second configured key is a fallback.
+Open `.env` and set `LLM_PROVIDER` to `groq` or `mistral`, then add the matching key:
+
+- **Groq (primary):** Create a key at [console.groq.com/keys](https://console.groq.com/keys) and set `GROQ_API_KEY`.
+- **Mistral (alternative):** Create a key following the [Mistral API key documentation](https://docs.mistral.ai/admin/security-access/api-keys) and set `MISTRAL_API_KEY`.
+
+`LLM_PROVIDER` selects which provider to try first. If you set both keys, the second provider is used as a fallback.
 
 > [!CAUTION]
 > Never commit `.env`. It is git-ignored because environment files often hold secrets. Only `.env.example`, with placeholder or default values, belongs in the repository.
@@ -132,7 +122,7 @@ Launch VS Code in the project root folder:
 code .
 ```
 
-Then open a notebook and select the Python environment created by `uv sync` as the kernel. Run cells from top to bottom. Short exercises are followed immediately by runnable solutions or explanations.
+Then open a notebook and select the Python environment created by `uv sync` as the kernel.
 
 ## API Usage Notes
 
