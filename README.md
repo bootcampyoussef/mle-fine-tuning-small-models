@@ -127,7 +127,7 @@ Then open a notebook and select the Python environment created by `uv sync` as t
 ## API Usage Notes
 
 - All five notebooks run without an API key. Notebook 05 then labels its illustrative scores as **simulated**, not measured LLM judgments. Provider errors remain visible and never count as successful live judgments.
-- `MAX_JUDGE_ANSWERS=4` limits notebook 05 to four candidate answers per run: two base/adapted pairs when using the supplied notebook 04 outputs. Set it to `8` for all four held-out cases, then restart the kernel. Each answer may try both configured providers; this is an answer-count limit, not a token or spending cap.
+- `MAX_JUDGE_ANSWERS=8` lets notebook 05 judge all eight candidate answers per run: the base and adapted answers for all four held-out cases. Lower it to reduce provider calls, then restart the kernel. Each answer may try both configured providers; this is an answer-count limit, not a token or spending cap.
 - Live calls may incur costs or hit rate limits. Provider free tiers, model availability, and billing rules can change; check the provider console before running live experiments.
 
 ## Professional Tooling Context
