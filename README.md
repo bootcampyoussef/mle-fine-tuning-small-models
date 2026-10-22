@@ -132,7 +132,7 @@ Then open a notebook and select the Python environment created by `uv sync` as t
 
 ## Professional Tooling Context
 
-The real local training path uses Transformers, PEFT, and PyTorch with an explicit optimization loop. Ordinary LoRA keeps the CPU path portable; QLoRA is explained but not executed. Notebooks 03-04 use SmolLM2's native chat template consistently for training, generation, and conditional perplexity. Rerun notebook 03 before evaluating an adapter trained with the former completion-style format.
+The real local training path uses Transformers, PEFT, and PyTorch with an explicit optimization loop. Ordinary LoRA keeps the CPU path portable; QLoRA is explained but not executed. Notebooks 03-04 use SmolLM2's native chat template consistently for training, generation, and conditional perplexity.
 
 The twelve training examples demonstrate the workflow, not a production support model. The four held-out prompts test transfer to new wording in familiar policy domains, not unseen domain knowledge. Lower training loss or better lexical overlap does not prove policy correctness.
 
