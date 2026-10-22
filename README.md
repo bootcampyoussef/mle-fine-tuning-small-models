@@ -1,6 +1,6 @@
 # Fine-Tuning Small Models Locally and Evaluation
 
-A five-notebook learning path for preparing instruction data, training a real local [LoRA](https://arxiv.org/abs/2106.09685) adapter, and comparing it with the unchanged base model. The notebooks use [Hugging Face Transformers](https://huggingface.co/docs/transformers/index), [PEFT](https://huggingface.co/docs/peft/index), and a small fictional support-policy dataset. Local metrics and an optional [LLM-as-judge](https://arxiv.org/abs/2306.05685) workflow expose both improvements and remaining failures.
+A five-notebook learning path for preparing instruction data, training a real local LoRA adapter, and comparing it with the unchanged base model. The notebooks use Hugging Face Transformers, PEFT, and a small fictional support-policy dataset. Local metrics and an optional LLM-as-judge workflow expose both improvements and remaining failures.
 
 ## Learning Objectives
 
@@ -137,12 +137,3 @@ The real local training path uses Transformers, PEFT, and PyTorch with an explic
 The twelve training examples demonstrate the workflow, not a production support model. The four held-out prompts test transfer to new wording in familiar policy domains, not unseen domain knowledge. Lower training loss or better lexical overlap does not prove policy correctness.
 
 Notebook 04 saves all base/adapted answers, per-case metrics, aggregate scores, and configuration to `outputs/model-comparison.json`. Notebook 05 judges a bounded subset, or standalone example candidates if that file is absent, then saves scores and their source to `outputs/judge-comparison.json`. Lexical matches are human-review signals, not proof of a policy violation. Keep generated artifacts out of Git.
-
-## References & Further Reading
-
-- [LoRA paper](https://arxiv.org/abs/2106.09685) and [QLoRA paper](https://arxiv.org/abs/2305.14314).
-- [Hugging Face PEFT LoRA guide](https://huggingface.co/docs/peft/developer_guides/lora).
-- [Hugging Face chat templates](https://huggingface.co/docs/transformers/chat_templating).
-- [ROUGE](https://aclanthology.org/W04-1013/) and [BLEU](https://aclanthology.org/P02-1040/).
-- [Hugging Face perplexity guide](https://huggingface.co/docs/transformers/perplexity).
-- [Judging LLM-as-a-Judge](https://arxiv.org/abs/2306.05685) and [G-Eval](https://arxiv.org/abs/2303.16634).
